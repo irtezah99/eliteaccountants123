@@ -1,0 +1,14 @@
+:root{
+--sky-blue:#2e7de1;--sky-blue-dark:#1d5fbf;--sky-blue-pale:#d6e8ff;
+--navy-950:#0b1e33;--navy-900:#142943;--navy-800:#1e3a5c;
+--canvas:#ffffff;--surface-soft:#f5f7fa;--surface-dark:#0b1e33;--surface-elevated:#142943;
+--hairline:#d8dee6;--hairline-strong:#3a4c61;
+--ink:#0b1220;--body:#1e2733;--mute:#6b7684;--stone:#8b94a0;--ash:#aeb6c0;
+--on-dark:#ffffff;--on-dark-mute:rgba(255,255,255,0.7);
+--error:#c0362c;--error-deep:#6b1712;
+--warning:#b5690a;--warning-bright:#e08a1e;
+--success:#1f8a5f;--success-deep:#145c3e;
+--link:#2e7de1;
+--gold:#b8862e;--gold-deep:#7a5a1c;--gold-pale:#f6e9d0;
+--color-primary:var(--sky-blue);--color-primary-dark:var(--sky-blue-dark);--color-on-primary:#ffffff;
+}

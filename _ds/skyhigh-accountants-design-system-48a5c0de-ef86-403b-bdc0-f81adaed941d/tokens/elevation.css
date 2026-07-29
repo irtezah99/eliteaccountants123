@@ -1,0 +1,5 @@
+:root{
+--shadow-sticky:0 0 5px 0 rgba(11,30,51,0.25);
+--border-hairline:1px solid var(--hairline);
+--border-hairline-strong:1px solid var(--hairline-strong);
+}
