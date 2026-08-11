@@ -1,0 +1,59 @@
+// PakBussHub database schema.
+// Uses SQLite for easy local development (it's just a file on disk, no setup required).
+// For production you can switch the datasource to Postgres/MySQL by changing
+// `provider` and `DATABASE_URL` - the rest of the schema stays the same.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// SQLite has no native enum support, so Role and Business.status are plain
+// strings. Valid values are enforced in application code (see src/lib).
+// Role: "BUSINESS" | "ADMIN"
+// Business.status: "PENDING" | "APPROVED" | "REJECTED"
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  role         String     @default("BUSINESS")
+  createdAt    DateTime   @default(now())
+  businesses   Business[]
+}
+
+model Business {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  category    String
+  shortDescription String
+  description String
+  address     String
+  phone       String
+  email       String
+  website     String?
+  facebook    String?
+  instagram   String?
+  hours       String
+  logoUrl     String
+  photoUrls   String // comma-separated list of image URLs
+  status      String   @default("PENDING")
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  owner       User     @relation(fields: [ownerId], references: [id])
+  ownerId     String
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
