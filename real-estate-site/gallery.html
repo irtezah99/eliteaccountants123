@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Gallery | Horizon Realty Group</title>
+<meta name="description" content="Browse all Horizon Realty Group projects, available and sold, with full detail pages for each.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+      </span>
+      Horizon Realty Group
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html" aria-current="page">Project Gallery</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="#" class="calc-trigger" data-modal-target="#mortgage-modal">Mortgage Calculator</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--navy">Get In Touch</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Project Gallery</p>
+    <h1>Project Gallery</h1>
+    <p>Every project we've built or sold — filter by status and open any project for the full detail view.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn is-active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="available">Available</button>
+      <button class="filter-btn" data-filter="sold">Sold</button>
+    </div>
+
+    <div class="grid grid--3">
+
+      <div class="card gallery-item" data-category="available">
+        <div class="media-wrap">
+          <span class="badge-tag">Available</span>
+          <div class="media-block tone-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Residential</span>
+          <h3>The Alderwood Residence</h3>
+          <p>4 bed &middot; 3 bath modern family home with a landscaped garden.</p>
+          <div class="card-price">$685,000</div>
+          <div class="card-meta"><span>2,450 sqft</span><span>4 Bed</span><span>3 Bath</span></div>
+          <a href="projects/alderwood.html" class="btn btn--navy btn--block mt-24">View Full Project</a>
+        </div>
+      </div>
+
+      <div class="card gallery-item" data-category="sold">
+        <div class="media-wrap">
+          <span class="badge-sold">Sold</span>
+          <div class="media-block tone-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Residential</span>
+          <h3>Bayview Terrace</h3>
+          <p>3 bed &middot; 2 bath coastal-style home with an open living plan.</p>
+          <div class="card-price">$540,000</div>
+          <div class="card-meta"><span>1,800 sqft</span><span>3 Bed</span><span>2 Bath</span></div>
+          <a href="projects/bayview.html" class="btn btn--navy btn--block mt-24">View Full Detail</a>
+        </div>
+      </div>
+
+      <div class="card gallery-item" data-category="available">
+        <div class="media-wrap">
+          <span class="badge-tag">Available</span>
+          <div class="media-block tone-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Residential</span>
+          <h3>Maple Grove Cottage</h3>
+          <p>3 bed &middot; 2 bath cottage-style home near the town green.</p>
+          <div class="card-price">$475,000</div>
+          <div class="card-meta"><span>1,650 sqft</span><span>3 Bed</span><span>2 Bath</span></div>
+          <a href="projects/maple-grove.html" class="btn btn--navy btn--block mt-24">View Full Project</a>
+        </div>
+      </div>
+
+      <div class="card gallery-item" data-category="sold">
+        <div class="media-wrap">
+          <span class="badge-sold">Sold</span>
+          <div class="media-block tone-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Luxury</span>
+          <h3>Cedar Ridge Estate</h3>
+          <p>5 bed &middot; 4 bath executive estate on a private, wooded lot.</p>
+          <div class="card-price">$1,150,000</div>
+          <div class="card-meta"><span>3,800 sqft</span><span>5 Bed</span><span>4 Bath</span></div>
+          <a href="projects/cedar-ridge.html" class="btn btn--navy btn--block mt-24">View Full Detail</a>
+        </div>
+      </div>
+
+      <div class="card gallery-item" data-category="available">
+        <div class="media-wrap">
+          <span class="badge-tag">Available</span>
+          <div class="media-block tone-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-4h6v4"/><path d="M8 7h1M12 7h1M16 7h1M8 11h1M12 11h1M16 11h1"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Townhome</span>
+          <h3>Willow Creek Townhome</h3>
+          <p>3 bed &middot; 2.5 bath townhome with a private courtyard entry.</p>
+          <div class="card-price">$612,000</div>
+          <div class="card-meta"><span>2,100 sqft</span><span>3 Bed</span><span>2.5 Bath</span></div>
+          <a href="projects/willow-creek.html" class="btn btn--navy btn--block mt-24">View Full Project</a>
+        </div>
+      </div>
+
+      <div class="card gallery-item" data-category="sold">
+        <div class="media-wrap">
+          <span class="badge-sold">Sold</span>
+          <div class="media-block tone-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-4h6v4"/><path d="M8 7h1M12 7h1M16 7h1M8 11h1M12 11h1M16 11h1"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Residential</span>
+          <h3>Harbor Point Villa</h3>
+          <p>4 bed &middot; 3 bath villa close to the marina and waterfront trail.</p>
+          <div class="card-price">$890,000</div>
+          <div class="card-meta"><span>2,900 sqft</span><span>4 Bed</span><span>3 Bath</span></div>
+          <a href="projects/harbor-point.html" class="btn btn--navy btn--block mt-24">View Full Detail</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Don't see the right fit yet?</h2>
+      <p>Tell us your budget and must-haves — we'll let you know when a matching project becomes available.</p>
+      <a href="contact.html" class="btn btn--gold">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="color:#fff;">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+          </span>
+          Horizon Realty Group
+        </a>
+        <p>Residential and commercial real estate services built on local expertise and honest advice.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Project Gallery</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Landscaping &amp; Fencing</a></li>
+          <li><a href="services.html">Home Repair &amp; Renovation</a></li>
+          <li><a href="#" class="calc-trigger" data-modal-target="#mortgage-modal">Mortgage Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">128 Market Street, Suite 400</a></li>
+          <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:hello@horizonrealtygroup.example">hello@horizonrealtygroup.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Horizon Realty Group. All rights reserved.</span>
+      <span>Placeholder content for demonstration purposes.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="mortgage-modal">
+  <div class="modal">
+    <button class="modal-close" data-modal-close aria-label="Close">&times;</button>
+    <h3>Mortgage Calculator</h3>
+    <p style="margin-top:6px;">Estimate your monthly payment. For illustration only — contact us for a personalized quote.</p>
+    <form id="mortgage-form" class="mt-24">
+      <div class="form-field">
+        <label for="calc-price">Home Price ($)</label>
+        <input type="number" id="calc-price" value="500000" min="0" step="1000" required>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="calc-down">Down Payment (%)</label>
+          <input type="number" id="calc-down" value="20" min="0" max="100" step="1" required>
+        </div>
+        <div class="form-field">
+          <label for="calc-rate">Interest Rate (%)</label>
+          <input type="number" id="calc-rate" value="6.5" min="0" max="20" step="0.1" required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="calc-term">Loan Term</label>
+        <select id="calc-term">
+          <option value="30">30 years</option>
+          <option value="20">20 years</option>
+          <option value="15">15 years</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn--navy btn--block">Calculate</button>
+    </form>
+    <div class="calc-result" id="calc-result" hidden>
+      <span>Estimated Monthly Payment</span>
+      <strong id="calc-monthly">$0</strong>
+      <div class="calc-breakdown">
+        <span>Loan Amount: <strong id="calc-loan-amount">$0</strong></span>
+        <span>Total Interest: <strong id="calc-total-interest">$0</strong></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

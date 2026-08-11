@@ -1,0 +1,43 @@
+name: Deploy real-estate-site to GitHub Pages
+
+# Pages source is set to "GitHub Actions" in repo settings; this triggers a run.
+on:
+  push:
+    branches:
+      - main
+      - claude/real-estate-site-setup-6f54je
+    paths:
+      - "real-estate-site/**"
+      - ".github/workflows/deploy-real-estate-site.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: real-estate-site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
