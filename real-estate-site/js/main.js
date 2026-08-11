@@ -214,4 +214,68 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector("#calc-result").hidden = false;
     });
   }
+
+  // Keep every heading on a single line: shrink font-size to fit its
+  // container instead of wrapping; fall back to wrapping only if a
+  // heading still won't fit at a sane minimum size.
+  function fitHeadingsToContainer() {
+    document.querySelectorAll("h1, h2, h3, h4").forEach(function (el) {
+      el.style.whiteSpace = "nowrap";
+      el.style.fontSize = "";
+      var baseSize = parseFloat(window.getComputedStyle(el).fontSize);
+      var floorSize = Math.max(12, baseSize * 0.45);
+      var size = baseSize;
+      var attempts = 0;
+      while (el.scrollWidth > el.clientWidth + 1 && size > floorSize && attempts < 60) {
+        size -= 0.5;
+        el.style.fontSize = size + "px";
+        attempts++;
+      }
+      if (el.scrollWidth > el.clientWidth + 1) {
+        el.style.whiteSpace = "normal";
+      }
+    });
+  }
+
+  function debounce(fn, wait) {
+    var t;
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, wait);
+    };
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fitHeadingsToContainer);
+  } else {
+    fitHeadingsToContainer();
+  }
+  window.addEventListener("load", fitHeadingsToContainer);
+  window.addEventListener("resize", debounce(fitHeadingsToContainer, 150));
+
+  // Scroll-reveal: fade + slide in trust badges, project cards, value
+  // cards, testimonials and FAQ items as they enter the viewport.
+  // Progressive enhancement — the reveal-init class (and its hidden
+  // state) is only added once we know JS + IntersectionObserver work,
+  // so content stays visible if either is unavailable.
+  if ("IntersectionObserver" in window) {
+    var revealEls = document.querySelectorAll(
+      ".trust-card, .carousel-track .card, .gallery-item, .card-refined, .quote-card, .faq-item"
+    );
+    if (revealEls.length) {
+      revealEls.forEach(function (el) { el.classList.add("reveal-init"); });
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+      revealEls.forEach(function (el) { revealObserver.observe(el); });
+    }
+  }
 });
