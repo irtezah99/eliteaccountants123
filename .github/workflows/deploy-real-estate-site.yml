@@ -1,5 +1,6 @@
 name: Deploy real-estate-site to GitHub Pages
 
+# Pages source is set to "GitHub Actions" in repo settings; this triggers a run.
 on:
   push:
     branches:
