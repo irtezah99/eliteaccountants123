@@ -33,6 +33,16 @@ body {
   background: var(--cream);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  animation: page-fade-in 0.45s ease both;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
 }
 
 img { max-width: 100%; display: block; }
@@ -40,6 +50,32 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
 ul { list-style: none; }
+
+/* ==========================================================================
+   Scroll-reveal (progressive enhancement — JS adds .reveal-init before
+   observing, so content stays fully visible if JS never runs). Defined
+   early so later, more specific component :hover rules always win the
+   cascade at equal specificity once an element has been revealed.
+   ========================================================================== */
+
+.reveal-init {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-init.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 .container {
   width: 100%;
@@ -116,7 +152,8 @@ p { color: var(--gray-600); }
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.btn:hover { transform: translateY(-2px); }
+.btn:hover { transform: translateY(-2px) scale(1.03); }
+.btn:active { transform: translateY(0) scale(0.98); }
 
 .btn--gold {
   background: var(--gold);
@@ -489,7 +526,7 @@ p { color: var(--gray-600); }
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.card:hover { transform: translateY(-6px) scale(1.015); box-shadow: var(--shadow-lg); }
 
 .card-body { padding: 24px; }
 
@@ -557,9 +594,16 @@ p { color: var(--gray-600); }
   border: 1px solid var(--gray-300);
   border-radius: var(--radius);
   padding: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .feature-card h3 { margin-bottom: 10px; }
+
+.feature-card:hover:not(.card-refined) {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(122, 31, 46, 0.15);
+}
 
 /* ==========================================================================
    Refined cards (Our Values, Our Process) — softer shadow, hover lift,
@@ -573,7 +617,7 @@ p { color: var(--gray-600); }
 }
 
 .card-refined:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.015);
   box-shadow: 0 22px 44px rgba(122, 31, 46, 0.14);
   border-color: rgba(200, 162, 77, 0.45);
 }

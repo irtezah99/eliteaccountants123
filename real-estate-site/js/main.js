@@ -252,4 +252,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener("load", fitHeadingsToContainer);
   window.addEventListener("resize", debounce(fitHeadingsToContainer, 150));
+
+  // Scroll-reveal: fade + slide in trust badges, project cards, value
+  // cards, testimonials and FAQ items as they enter the viewport.
+  // Progressive enhancement — the reveal-init class (and its hidden
+  // state) is only added once we know JS + IntersectionObserver work,
+  // so content stays visible if either is unavailable.
+  if ("IntersectionObserver" in window) {
+    var revealEls = document.querySelectorAll(
+      ".trust-card, .carousel-track .card, .gallery-item, .card-refined, .quote-card, .faq-item"
+    );
+    if (revealEls.length) {
+      revealEls.forEach(function (el) { el.classList.add("reveal-init"); });
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+      revealEls.forEach(function (el) { revealObserver.observe(el); });
+    }
+  }
 });
