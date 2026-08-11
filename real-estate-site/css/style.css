@@ -456,25 +456,26 @@ p { color: var(--gray-600); }
 }
 
 .card-meta svg {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   flex-shrink: 0;
   color: var(--gold);
 }
 
 .icon-tile {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
   background: var(--burgundy);
   color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
 }
 
-.icon-tile svg { width: 24px; height: 24px; }
+.icon-tile svg { width: 13px; height: 13px; }
 
 .feature-card {
   background: var(--white);
@@ -484,6 +485,62 @@ p { color: var(--gray-600); }
 }
 
 .feature-card h3 { margin-bottom: 10px; }
+
+/* ==========================================================================
+   Refined cards (Our Values, Our Process) — softer shadow, hover lift,
+   duotone/outline icon treatment instead of solid-fill tiles
+   ========================================================================== */
+
+.card-refined {
+  border-color: rgba(122, 31, 46, 0.1);
+  box-shadow: 0 4px 18px rgba(122, 31, 46, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-refined:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 44px rgba(122, 31, 46, 0.14);
+  border-color: rgba(200, 162, 77, 0.45);
+}
+
+.icon-tile--outline {
+  background: linear-gradient(135deg, rgba(122, 31, 46, 0.07), rgba(200, 162, 77, 0.14));
+  border: 1.5px solid rgba(122, 31, 46, 0.16);
+  color: var(--burgundy);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-refined:hover .icon-tile--outline {
+  transform: scale(1.12) rotate(-6deg);
+  background: linear-gradient(135deg, var(--burgundy), var(--gold));
+  border-color: transparent;
+  color: var(--white);
+}
+
+.step-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: var(--white);
+  color: var(--burgundy);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.card-refined:hover .step-badge {
+  transform: scale(1.15);
+  background: var(--gold);
+  color: var(--white);
+}
 
 /* ==========================================================================
    Gallery filters
@@ -977,6 +1034,7 @@ p { color: var(--gray-600); }
 @media (max-width: 620px) { .specs-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .specs-grid div { text-align: center; }
+.specs-grid svg { width: 22px; height: 22px; color: var(--gold); margin: 0 auto 8px; display: block; }
 .specs-grid strong { display: block; font-family: Georgia, serif; font-size: 1.5rem; color: var(--burgundy); }
 .specs-grid span { font-size: 0.78rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
 
@@ -1213,3 +1271,63 @@ p { color: var(--gray-600); }
   align-items: start;
 }
 @media (max-width: 760px) { .map-amenities-wrap { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Partner / affiliate logo marquee
+   ========================================================================== */
+
+.partner-strip {
+  padding: 48px 0;
+  overflow: hidden;
+}
+
+.partner-strip .section-head { margin-bottom: 28px; }
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  white-space: nowrap;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.marquee-logo:hover { opacity: 1; color: var(--burgundy); }
+
+.marquee-logo svg { width: 26px; height: 26px; color: var(--gold); flex-shrink: 0; }
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* ==========================================================================
+   Testimonials carousel wrapper
+   ========================================================================== */
+
+.testimonial-track .quote-card { flex: 0 0 340px; }
