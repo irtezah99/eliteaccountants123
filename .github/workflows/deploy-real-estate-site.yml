@@ -1,11 +1,13 @@
 name: Deploy real-estate-site to GitHub Pages
 
 # Pages source is set to "GitHub Actions" in repo settings; this triggers a run.
+# Only main can deploy: the github-pages environment is restricted to the
+# default branch, so pushes from feature branches were failing instantly
+# at the environment gate (no logs, no runner ever assigned).
 on:
   push:
     branches:
       - main
-      - claude/real-estate-site-setup-6f54je
     paths:
       - "real-estate-site/**"
       - ".github/workflows/deploy-real-estate-site.yml"

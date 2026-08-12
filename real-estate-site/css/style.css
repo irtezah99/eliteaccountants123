@@ -206,19 +206,20 @@ p { color: var(--gray-600); }
   color: var(--burgundy);
 }
 
-.brand-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold-light);
-  flex-shrink: 0;
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
-.brand-mark svg { width: 20px; height: 20px; }
+.brand-logo--footer {
+  height: 58px;
+}
+
+@media (max-width: 480px) {
+  .brand-logo { height: 36px; }
+  .brand-logo--footer { height: 46px; }
+}
 
 .nav-links {
   display: flex;
