@@ -612,6 +612,12 @@ p { color: var(--gray-600); }
   .split { grid-template-columns: 1fr; gap: 36px; }
 }
 
+/* Grid/flex items default to min-width:auto, which lets a broken <img>'s
+   long alt text force its track wider than the column — even with
+   width:100% set. min-width:0 disables that so missing images never
+   blow out the layout while photos are still being uploaded. */
+.split > *, .media-wrap, .photo-thumb { min-width: 0; }
+
 .card {
   background: var(--white);
   border: 1px solid var(--gray-300);
@@ -1116,6 +1122,8 @@ p { color: var(--gray-600); }
 
 .hero-bg-slide.is-active { opacity: 1; }
 
+.hero-bg img { opacity: 0.3; }
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -1316,6 +1324,47 @@ p { color: var(--gray-600); }
   text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/* Compact inline photo strip (e.g. Featured Project card interiors) —
+   reuses .photo-thumb but sized down and laid out in a single row. */
+.mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.mini-gallery .photo-thumb { aspect-ratio: 1 / 1; border-radius: 6px; }
+.mini-gallery .photo-thumb .media-block { border-radius: 6px; }
+.mini-gallery .photo-thumb .photo-label { display: none; }
+@media (max-width: 480px) { .mini-gallery { grid-template-columns: repeat(3, 1fr); } }
+
+/* Small pill list for supplementary feature call-outs */
+.feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+.feature-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
 }
 
 .lightbox {
