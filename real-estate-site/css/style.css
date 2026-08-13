@@ -689,6 +689,11 @@ p { color: var(--gray-600); }
 
 .icon-tile svg { width: 13px; height: 13px; }
 
+.feature-icon { width: 32px; height: 32px; color: var(--burgundy); margin-bottom: 14px; display: block; }
+
+.eyebrow-icon { display: inline-flex; align-items: center; gap: 6px; }
+.eyebrow-icon svg { width: 16px; height: 16px; flex-shrink: 0; }
+
 .feature-card {
   background: var(--white);
   border: 1px solid var(--gray-300);
