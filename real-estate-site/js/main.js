@@ -50,11 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         status.classList.add("is-error");
         return;
       }
-      var nameField = form.querySelector("#name");
-      var firstName = nameField && nameField.value.trim() ? nameField.value.trim().split(/\s+/)[0] : "";
-      status.textContent = firstName
-        ? "Thank you for your message, " + firstName + ". We'll be in touch shortly."
-        : "Thank you for your message. We'll be in touch shortly.";
+      status.textContent = "Thanks for your message, we'll get back to you shortly.";
       status.classList.add("is-success");
       form.reset();
     });
