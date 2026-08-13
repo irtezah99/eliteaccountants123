@@ -1822,7 +1822,25 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 }
 .pd-subhead:first-of-type { margin-top: 0; }
 
-.property-detail .feature-pill { font-weight: 500; }
-.property-detail .feature-pill svg { color: var(--gold); }
-
-.property-detail .amenity-row .name { color: var(--ink); font-weight: 500; }
+.pd-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 18px;
+  border-top: 1px solid var(--gray-100);
+}
+.pd-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.pd-icon-item:nth-child(odd) { padding-right: 14px; border-right: 1px solid var(--gray-100); }
+.pd-icon-item:nth-child(even) { padding-left: 14px; }
+.pd-icon-item svg { width: 19px; height: 19px; color: var(--gold); stroke-width: 1.8; flex-shrink: 0; }
+.pd-icon-item span { font-size: 0.87rem; font-weight: 500; color: var(--ink); }
+@media (max-width: 480px) {
+  .pd-icon-grid { grid-template-columns: 1fr; }
+  .pd-icon-item:nth-child(odd) { padding-right: 4px; border-right: none; }
+  .pd-icon-item:nth-child(even) { padding-left: 4px; }
+}
