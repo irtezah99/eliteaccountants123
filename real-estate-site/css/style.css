@@ -1766,3 +1766,63 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 
   .lightbox-media { transition: none; }
 }
+
+/* ==========================================================================
+   Property detail page (scoped to .property-detail, e.g. ganugan-road.html)
+   — left-aligned text, dark-neutral headings, crimson reserved for CTAs/
+   key numbers, gold reserved for icon accents, two-column summary layout.
+   ========================================================================== */
+
+.property-detail h1,
+.property-detail h2,
+.property-detail h3,
+.property-detail h4 { color: var(--ink); }
+
+.property-detail .section-head {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.property-detail .pd-address {
+  margin-top: 28px;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+}
+
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 20px;
+}
+@media (max-width: 860px) {
+  .pd-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.pd-hero-photo { aspect-ratio: 4 / 5; }
+.pd-hero-photo img { object-fit: cover; }
+
+.pd-price-block { margin-top: 24px; }
+.property-detail .pd-price-block .card-price {
+  color: var(--burgundy);
+  font-size: 1.6rem;
+}
+
+.pd-col-right .specs-grid { margin-top: 0; }
+
+.pd-subhead {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 32px;
+  margin-bottom: 4px;
+}
+.pd-subhead:first-of-type { margin-top: 0; }
+
+.property-detail .feature-pill { font-weight: 500; }
+.property-detail .feature-pill svg { color: var(--gold); }
+
+.property-detail .amenity-row .name { color: var(--ink); font-weight: 500; }
