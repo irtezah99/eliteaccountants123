@@ -50,7 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
         status.classList.add("is-error");
         return;
       }
-      status.textContent = "Thanks! Your message has been received — our team will get back to you within one business day.";
+      var nameField = form.querySelector("#name");
+      var firstName = nameField && nameField.value.trim() ? nameField.value.trim().split(/\s+/)[0] : "";
+      status.textContent = firstName
+        ? "Thank you for your message, " + firstName + ". We'll be in touch shortly."
+        : "Thank you for your message. We'll be in touch shortly.";
       status.classList.add("is-success");
       form.reset();
     });
