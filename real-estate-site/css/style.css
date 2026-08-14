@@ -141,7 +141,7 @@ h4 { font-size: 1rem; font-weight: 600; }
   .heading-tight { white-space: normal; }
 }
 
-p { color: var(--gray-600); }
+p { color: var(--ink); }
 
 .eyebrow {
   display: inline-block;
