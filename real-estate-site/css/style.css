@@ -1899,44 +1899,10 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   display: block;
 }
 
-.hero-badge {
-  position: absolute;
-  z-index: 2;
-  left: 28px;
-  bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: rgba(28, 10, 15, 0.92);
-  padding: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0 18px 36px rgba(28, 10, 15, 0.4);
-}
-.hero-badge .icon-tile { width: 40px; height: 40px; border-radius: 10px; margin: 0; flex-shrink: 0; }
-.hero-badge .icon-tile svg { width: 20px; height: 20px; }
-.hero-badge .hero-badge-copy strong {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  color: var(--gold-light);
-  line-height: 1;
-}
-.hero-badge .hero-badge-copy span {
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.72);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 @media (max-width: 900px) {
   .hero-split { flex-direction: column; min-height: auto; }
   .hero-split-text { flex: none; padding: 56px 24px 44px; }
   .hero-split-photo { flex: none; height: 320px; }
-}
-@media (max-width: 480px) {
-  .hero-badge { left: 16px; bottom: 16px; padding: 12px 14px; gap: 10px; }
-  .hero-badge .icon-tile { width: 32px; height: 32px; }
-  .hero-badge .hero-badge-copy strong { font-size: 1.1rem; }
 }
 
 /* ==========================================================================
@@ -2052,6 +2018,10 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 .corner-badge svg { width: 22px; height: 22px; }
 
 .feat-project .media-block img.exterior-photo { object-fit: cover; }
+.feat-project .split { align-items: flex-start; }
+
+.quote-stars { display: flex; gap: 3px; margin-bottom: 12px; }
+.quote-stars svg { width: 15px; height: 15px; color: var(--gold); }
 @media (max-width: 480px) {
   .corner-badge { right: -8px; bottom: -8px; width: 44px; height: 44px; }
   .corner-badge svg { width: 18px; height: 18px; }
