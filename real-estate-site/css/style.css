@@ -991,6 +991,13 @@ p { color: var(--ink); }
 .contact-card h3 { font-size: 1rem; margin-bottom: 4px; }
 .contact-card p { margin: 0; font-size: 0.92rem; }
 
+.contact-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-cards-grid .contact-card { margin-bottom: 0; }
+@media (max-width: 560px) { .contact-cards-grid { grid-template-columns: 1fr; } }
+
+.contact-connect { margin-top: 32px; }
+.contact-connect .eyebrow { display: block; }
+
 .map-block {
   border-radius: var(--radius);
   overflow: hidden;
@@ -1092,9 +1099,12 @@ p { color: var(--ink); }
 .footer-grid ul li a { font-size: 0.9rem; color: rgba(255,255,255,0.68); }
 .footer-grid ul li a:hover { color: var(--gold-light); }
 
-.footer-brand p { color: rgba(255,255,255,0.6); margin-top: 14px; font-size: 0.9rem; max-width: 280px; }
+.footer-grid ul li a.footer-contact-link { display: inline-flex; align-items: center; gap: 8px; }
+.footer-contact-link svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; }
 
-.footer-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-brand p { color: rgba(255,255,255,0.6); margin-top: 14px; font-size: 0.9rem; max-width: 280px; font-weight: 700; }
+
+.footer-social { display: flex; gap: 10px; margin-top: 28px; }
 .footer-social a {
   width: 36px; height: 36px;
   border-radius: 50%;
@@ -1116,6 +1126,8 @@ p { color: var(--ink); }
 }
 
 .footer-bottom a:hover { color: var(--gold-light); }
+
+.footer-legal { display: flex; gap: 20px; }
 
 /* ==========================================================================
    Utilities
