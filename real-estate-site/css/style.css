@@ -1961,14 +1961,14 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   .about-diagonal-frame img { clip-path: none; border-radius: var(--radius); }
 }
 
-.about-columns { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; }
+.about-columns { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 48px; }
 @media (max-width: 700px) { .about-columns { grid-template-columns: 1fr; gap: 36px; } }
 
 .value-list { display: grid; gap: 18px; margin-top: 8px; }
 .value-list-item { display: flex; align-items: center; gap: 14px; }
 .value-list-item .icon-tile--outline { width: 40px; height: 40px; margin: 0; flex-shrink: 0; }
 .value-list-item .icon-tile--outline svg { width: 18px; height: 18px; }
-.value-list-item span:last-child { font-weight: 600; color: var(--ink); font-size: 0.98rem; }
+.value-list-item span:last-child { font-weight: 600; color: var(--ink); font-size: 0.98rem; min-width: 0; overflow-wrap: break-word; }
 
 /* ==========================================================================
    Home — Featured Project header row (label/heading left, description right)
