@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // container instead of wrapping; fall back to wrapping only if a
   // heading still won't fit at a sane minimum size.
   function fitHeadingsToContainer() {
-    document.querySelectorAll("h1, h2, h3, h4").forEach(function (el) {
+    document.querySelectorAll("h1:not(.no-autofit), h2:not(.no-autofit), h3, h4").forEach(function (el) {
       el.style.whiteSpace = "nowrap";
       el.style.fontSize = "";
       var baseSize = parseFloat(window.getComputedStyle(el).fontSize);
