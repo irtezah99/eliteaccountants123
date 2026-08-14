@@ -233,6 +233,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Inline property-page loan-amount calculator (sliders + editable fields,
+  // auto-recalculating loan amount = price - deposit)
+  var pdCalc = document.querySelector(".pd-calc");
+  if (pdCalc) {
+    var pdPriceRange = document.querySelector("#pd-calc-price-range");
+    var pdPriceInput = document.querySelector("#pd-calc-price");
+    var pdDepositRange = document.querySelector("#pd-calc-deposit-range");
+    var pdDepositInput = document.querySelector("#pd-calc-deposit");
+    var pdRateRange = document.querySelector("#pd-calc-rate-range");
+    var pdRateInput = document.querySelector("#pd-calc-rate");
+    var pdLoanOut = document.querySelector("#pd-calc-loan");
+
+    function pdCalcUpdate() {
+      var price = parseFloat(pdPriceInput.value) || 0;
+      var deposit = parseFloat(pdDepositInput.value) || 0;
+      var loan = Math.max(price - deposit, 0);
+      pdLoanOut.textContent = "$" + Math.round(loan).toLocaleString("en-US");
+    }
+
+    function pdCalcSync(range, input) {
+      range.addEventListener("input", function () {
+        input.value = range.value;
+        pdCalcUpdate();
+      });
+      input.addEventListener("input", function () {
+        range.value = input.value;
+        pdCalcUpdate();
+      });
+    }
+
+    pdCalcSync(pdPriceRange, pdPriceInput);
+    pdCalcSync(pdDepositRange, pdDepositInput);
+    pdCalcSync(pdRateRange, pdRateInput);
+    pdCalcUpdate();
+  }
+
   // Keep every heading on a single line: shrink font-size to fit its
   // container instead of wrapping; fall back to wrapping only if a
   // heading still won't fit at a sane minimum size.

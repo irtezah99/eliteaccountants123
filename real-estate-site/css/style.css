@@ -1662,6 +1662,55 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 @media (max-width: 760px) { .map-amenities-wrap { grid-template-columns: 1fr; } }
 
 /* ==========================================================================
+   Inline property-page mortgage/loan-amount calculator
+   ========================================================================== */
+
+.pd-calc {
+  max-width: 560px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.pd-calc-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--burgundy);
+  margin-bottom: 8px;
+}
+
+.pd-calc-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pd-calc-row input[type="range"] {
+  flex: 1 1 auto;
+  accent-color: var(--gold);
+}
+
+.pd-calc-row input[type="number"] {
+  flex: 0 0 130px;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--white);
+}
+
+.pd-calc .calc-result { margin-top: 0; }
+
+@media (max-width: 480px) {
+  .pd-calc-row { flex-wrap: wrap; }
+  .pd-calc-row input[type="range"] { flex-basis: 100%; }
+  .pd-calc-row input[type="number"] { flex: 1 1 auto; }
+}
+
+/* ==========================================================================
    Partner / affiliate logo cards
    ========================================================================== */
 
@@ -1799,6 +1848,7 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 .pd-col-right .specs-grid { margin-top: 0; }
 
 .pd-subhead {
+  font-family: var(--font);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.09em;
