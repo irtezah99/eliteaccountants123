@@ -1939,27 +1939,40 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
    Home hero — two-column split (text + full-bleed photo)
    ========================================================================== */
 
-.hero-split {
+.hero-full {
   position: relative;
   display: flex;
-  align-items: stretch;
+  align-items: flex-end;
   min-height: 560px;
   overflow: hidden;
   background: var(--ink);
+  color: var(--white);
 }
-@media (min-width: 900px) { .hero-split { min-height: 72vh; } }
+@media (min-width: 900px) { .hero-full { min-height: 78vh; } }
 
-.hero-split-text {
+.hero-full-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-full-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgba(15, 20, 28, 0.92) 0%, rgba(15, 20, 28, 0.55) 45%, rgba(15, 20, 28, 0.1) 75%, rgba(15, 20, 28, 0.35) 100%);
+}
+
+.hero-full-inner {
   position: relative;
   z-index: 2;
-  flex: 0 1 560px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-  padding: 72px 32px 72px max(24px, calc((100vw - var(--container)) / 2 + 24px));
-  background: linear-gradient(120deg, rgba(20, 40, 63, 0.96), rgba(15, 20, 28, 0.98));
-  color: var(--white);
+  padding: 64px 24px 72px;
+  max-width: 700px;
 }
 
 .hero-split-title {
@@ -1971,27 +1984,26 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 .hero-split-title span { display: block; }
 .hero-split-title .accent-line { color: var(--gold-light); }
 
-.hero-split-text p.lead { color: rgba(255, 255, 255, 0.85); }
+.hero-full-inner p.lead { color: rgba(255, 255, 255, 0.85); }
 
-.hero-split-photo {
-  position: relative;
-  flex: 1 1 auto;
-  min-width: 300px;
+.hero-full-actions {
+  display: flex;
+  align-items: center;
+  gap: 72px; /* 0.75in */
+  flex-wrap: wrap;
 }
-.hero-split-photo img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.hero-full-actions .btn--outline {
+  background: rgba(15, 20, 28, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-width: 1.5px;
 }
 
-.hero-badge {
+.hero-full-badge {
   position: absolute;
   z-index: 2;
-  left: 28px;
-  bottom: 28px;
+  right: 28px;
+  top: 28px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -2000,16 +2012,16 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   border-radius: 12px;
   box-shadow: 0 18px 36px rgba(15, 20, 28, 0.4);
 }
-.hero-badge .icon-tile { width: 40px; height: 40px; border-radius: 10px; margin: 0; flex-shrink: 0; }
-.hero-badge .icon-tile svg { width: 20px; height: 20px; }
-.hero-badge .hero-badge-copy strong {
+.hero-full-badge .icon-tile { width: 40px; height: 40px; border-radius: 10px; margin: 0; flex-shrink: 0; }
+.hero-full-badge .icon-tile svg { width: 20px; height: 20px; }
+.hero-full-badge .hero-badge-copy strong {
   display: block;
   font-family: var(--font-serif);
   font-size: 1.4rem;
   color: var(--gold-light);
   line-height: 1;
 }
-.hero-badge .hero-badge-copy span {
+.hero-full-badge .hero-badge-copy span {
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.72);
   text-transform: uppercase;
@@ -2017,14 +2029,17 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 }
 
 @media (max-width: 900px) {
-  .hero-split { flex-direction: column; min-height: auto; }
-  .hero-split-text { flex: none; padding: 56px 24px 44px; }
-  .hero-split-photo { flex: none; height: 320px; }
+  .hero-full { min-height: 520px; }
+  .hero-full-inner { padding: 48px 24px 56px; }
+}
+@media (max-width: 640px) {
+  .hero-full-actions { gap: 16px; }
 }
 @media (max-width: 480px) {
-  .hero-badge { left: 16px; bottom: 16px; padding: 12px 14px; gap: 10px; }
-  .hero-badge .icon-tile { width: 32px; height: 32px; }
-  .hero-badge .hero-badge-copy strong { font-size: 1.1rem; }
+  .hero-full-badge { right: 16px; top: 16px; padding: 12px 14px; gap: 10px; }
+  .hero-full-badge .icon-tile { width: 32px; height: 32px; }
+  .hero-full-badge .hero-badge-copy strong { font-size: 1.1rem; }
+  .hero-full-inner .eyebrow { max-width: calc(100% - 120px); }
 }
 
 /* ==========================================================================
@@ -2057,7 +2072,6 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 }
 .corner-badge svg { width: 22px; height: 22px; }
 
-.feat-project .media-block img.exterior-photo { object-fit: cover; }
 .feat-project .split { align-items: flex-start; }
 
 .quote-stars { display: flex; gap: 3px; margin-bottom: 12px; }
