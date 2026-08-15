@@ -605,11 +605,11 @@ p { color: var(--ink); }
   height: 76px;
   border-radius: 50%;
   margin: 0 auto 20px;
-  background: linear-gradient(135deg, rgba(20, 40, 63, 0.08), rgba(200, 162, 77, 0.18));
-  border: 1.5px solid rgba(20, 40, 63, 0.14);
-  color: var(--burgundy);
+  background: var(--white);
+  border: 1.75px solid var(--ink);
+  color: var(--ink);
 }
-.trust-card .icon-tile svg { width: 36px; height: 36px; }
+.trust-card .icon-tile svg { width: 34px; height: 34px; stroke-width: 1.6; }
 .trust-card h3 { font-size: 1.05rem; margin-bottom: 5px; }
 .trust-card p { font-size: 0.85rem; margin: 0; color: var(--gray-600); }
 
@@ -641,6 +641,11 @@ p { color: var(--ink); }
 }
 @media (max-width: 860px) {
   .split { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.split--contact { grid-template-columns: 1.15fr 0.85fr; }
+@media (max-width: 860px) {
+  .split--contact { grid-template-columns: 1fr; }
 }
 
 /* Grid/flex items default to min-width:auto, which lets a broken <img>'s
