@@ -1986,7 +1986,8 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 .hero-full-inner {
   position: relative;
   z-index: 2;
-  padding: 64px 24px 72px;
+  padding: 64px 24px 72px 72px;
+  margin-top: 3in;
   max-width: 700px;
 }
 
@@ -1995,6 +1996,7 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   padding-left: 22px;
   margin: 6px 0 18px;
   color: var(--white);
+  line-height: 1.08;
 }
 .hero-split-title span { display: block; }
 .hero-split-title .accent-line { color: var(--gold-light); }
