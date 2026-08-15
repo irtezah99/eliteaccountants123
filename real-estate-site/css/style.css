@@ -1022,15 +1022,22 @@ p { color: var(--ink); }
   border: 1px solid var(--gray-300);
 }
 
+.map-block--embed { height: 280px; }
+
 .map-block::before {
   content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background-image:
     linear-gradient(rgba(122,31,46,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(122,31,46,0.06) 1px, transparent 1px);
   background-size: 32px 32px;
 }
+
+.map-block:has(iframe)::before { display: none; }
+
+.map-block iframe { position: relative; z-index: 1; }
 
 .map-pin {
   position: relative;
@@ -1043,6 +1050,15 @@ p { color: var(--ink); }
 }
 
 .map-pin svg { width: 34px; height: 34px; color: var(--gold); }
+
+.map-fallback-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--burgundy);
+}
+.map-fallback-link:hover { text-decoration: underline; }
 
 /* ==========================================================================
    Page header (interior pages)
