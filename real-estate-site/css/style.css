@@ -829,11 +829,13 @@ p { color: var(--ink); }
   box-shadow: 0 18px 40px -20px rgba(39, 42, 51, 0.35);
 }
 
-.testi-split { grid-template-columns: 1.05fr 1fr; margin-bottom: -130px; }
+.testi-wrap { max-width: 840px; margin: 0 auto; }
+.testi-split { grid-template-columns: 1fr 1.1fr; margin-bottom: -100px; }
 .testi-split .media-block { aspect-ratio: 4 / 3; }
-.testi-overlap { position: relative; z-index: 2; }
+.testi-overlap { position: relative; z-index: 2; margin-left: 34%; }
 @media (max-width: 860px) {
   .testi-split { margin-bottom: 32px; }
+  .testi-overlap { margin-left: 0; }
 }
 
 .quote-card p.quote-text {
@@ -2037,8 +2039,6 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
-.feat-project-desc { max-width: 360px; color: var(--gray-600); margin: 0; }
-
 .corner-badge {
   position: absolute;
   right: -16px;
@@ -2113,12 +2113,13 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   z-index: 2;
   width: fit-content;
   margin: 48px auto 0;
-  background: var(--white);
   color: var(--burgundy);
   font-weight: 700;
   font-size: 1rem;
-  padding: 16px 32px;
-  border-radius: 999px;
-  box-shadow: 0 16px 32px rgba(15, 20, 28, 0.28);
+  padding: 22px 44px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 140' preserveAspectRatio='none'%3E%3Cpath d='M6,72 C2,58 14,44 34,38 C24,30 30,18 48,15 C110,4 250,2 340,8 C388,11 420,20 428,42 C434,60 424,72 434,84 C440,100 420,112 388,116 C300,128 150,130 70,120 C36,116 14,106 10,90 C6,84 10,78 6,72 Z' fill='white'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  filter: drop-shadow(0 14px 26px rgba(15, 20, 28, 0.32));
   transform: rotate(-3deg);
+  text-align: center;
+  white-space: nowrap;
 }
