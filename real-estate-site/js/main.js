@@ -112,6 +112,35 @@ document.addEventListener("DOMContentLoaded", function () {
     if (next) next.addEventListener("click", function () { scrollByCard(1); });
   });
 
+  // Auto-advancing testimonial carousel
+  var testimonialTrack = document.querySelector(".testimonial-track");
+  if (testimonialTrack && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var testimonialTimer;
+
+    function testimonialAdvance() {
+      var cardEl = testimonialTrack.querySelector(".quote-card");
+      var step = cardEl ? cardEl.getBoundingClientRect().width + 24 : 320;
+      var atEnd = testimonialTrack.scrollLeft + testimonialTrack.clientWidth >= testimonialTrack.scrollWidth - 4;
+      if (atEnd) {
+        testimonialTrack.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        testimonialTrack.scrollBy({ left: step, behavior: "smooth" });
+      }
+    }
+
+    function startTestimonialAuto() {
+      testimonialTimer = setInterval(testimonialAdvance, 4500);
+    }
+    function stopTestimonialAuto() {
+      clearInterval(testimonialTimer);
+    }
+
+    startTestimonialAuto();
+    testimonialTrack.addEventListener("mouseenter", stopTestimonialAuto);
+    testimonialTrack.addEventListener("mouseleave", startTestimonialAuto);
+    testimonialTrack.addEventListener("touchstart", stopTestimonialAuto, { passive: true });
+  }
+
   // Photo lightbox
   var lightbox = document.querySelector("#lightbox");
   if (lightbox) {
