@@ -609,7 +609,7 @@ p { color: var(--ink); }
   border: 1.5px solid rgba(20, 40, 63, 0.14);
   color: var(--burgundy);
 }
-.trust-card .icon-tile svg { width: 34px; height: 34px; stroke-width: 1.6; }
+.trust-card .icon-tile svg { width: 36px; height: 36px; }
 .trust-card h3 { font-size: 1.05rem; margin-bottom: 5px; }
 .trust-card p { font-size: 0.85rem; margin: 0; color: var(--gray-600); }
 
@@ -1958,12 +1958,12 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: calc(560px + 4in);
+  min-height: calc(560px + 4in + 3in);
   overflow: hidden;
   background: var(--ink);
   color: var(--white);
 }
-@media (min-width: 900px) { .hero-full { min-height: calc(78vh + 4in); } }
+@media (min-width: 900px) { .hero-full { min-height: calc(78vh + 4in + 3in); } }
 
 .hero-full-img {
   position: absolute;
@@ -2002,7 +2002,7 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 .hero-full-inner p.lead {
   color: rgba(255, 255, 255, 0.85);
   font-size: 1.1rem;
-  margin: 20px 0 32px;
+  margin: calc(20px + 2in) 0 32px;
   max-width: 560px;
 }
 
@@ -2011,7 +2011,7 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   align-items: center;
   gap: 72px; /* 0.75in */
   flex-wrap: wrap;
-  margin-top: 2in;
+  margin-top: 3in;
 }
 .hero-full-actions .btn--outline {
   background: rgba(15, 20, 28, 0.32);
