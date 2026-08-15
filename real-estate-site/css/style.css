@@ -2044,7 +2044,7 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
 .hero-full-inner p.lead {
   color: rgba(255, 255, 255, 0.85);
   font-size: 1.1rem;
-  margin: calc(20px + 2in) 0 32px;
+  margin: 20px 0 32px;
   max-width: 560px;
 }
 
@@ -2053,7 +2053,6 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   align-items: center;
   gap: 72px; /* 0.75in */
   flex-wrap: wrap;
-  margin-top: 3in;
 }
 .hero-full-actions .btn--outline {
   background: rgba(15, 20, 28, 0.32);
@@ -2115,8 +2114,9 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
+.feat-project-head p.eyebrow { margin-bottom: 4px; }
 .corner-badge {
   position: absolute;
   right: -16px;
@@ -2189,7 +2189,8 @@ img.exterior-photo, img.plan-photo { object-fit: contain; object-position: cente
   align-items: start;
 }
 .about-teaser-grid > * { min-width: 0; }
-.about-teaser-grid .media-block--tall { aspect-ratio: 3 / 4; }
+.about-teaser-grid .media-block--tall { aspect-ratio: 1 / 1; }
+.about-teaser-grid .media-block--tall img { object-position: center 60%; }
 @media (max-width: 1100px) {
   .about-teaser-grid { grid-template-columns: 1fr 1fr; }
   .about-teaser-grid > :nth-child(3) { grid-column: 1 / -1; }
