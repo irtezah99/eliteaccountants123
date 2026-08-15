@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         status.classList.add("is-error");
         return;
       }
-      status.textContent = "Thanks for your message, we'll get back to you shortly.";
+      status.textContent = "Thank you for your message, we'll get back to you within one business day";
       status.classList.add("is-success");
       form.reset();
     });

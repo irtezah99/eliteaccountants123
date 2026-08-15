@@ -48,7 +48,7 @@
 
 <section class="section">
   <div class="container">
-    <div class="split">
+    <div class="split" style="grid-template-columns:1.15fr 0.85fr;">
     <div>
       <h2>Inform Us About You</h2>
       <form id="contact-form" class="mt-24">
@@ -72,14 +72,14 @@
         </div>
         <button type="submit" class="btn btn--burgundy btn--block">Send Your Enquiry</button>
         <p class="form-status" role="status"></p>
-        <p class="form-note">We typically respond within one business day.</p>
+        <p class="form-note">We typically respond within one business day</p>
         <!-- TODO: no backend/form service connected yet — wire this form up before go-live -->
       </form>
     </div>
 
     <div>
       <p class="eyebrow">Get In Touch</p>
-      <h2>We'd Love to Hear From You</h2>
+      <h2>See How Expertise Combines With Precision</h2>
       <div class="mt-24 contact-cards-grid">
         <div class="contact-card">
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
@@ -99,7 +99,7 @@
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-7.58-7-12a7 7 0 0 1 14 0c0 4.42-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
           <div>
             <h3>Visit Our Office</h3>
-            <p>Suite 1A, Level 1, 40 Raymond Street, Bankstown NSW 2200, Australia</p>
+            <p>1A, Level 1, 40 Raymond Street, Bankstown NSW 2200</p>
           </div>
         </div>
         <div class="contact-card">
@@ -109,11 +109,11 @@
             <p><a href="https://prestohomes.net.au" target="_blank" rel="noopener">prestohomes.net.au</a></p>
           </div>
         </div>
-        <div class="contact-card">
+        <div class="contact-card" style="grid-column:1 / -1;">
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
           <div>
             <h3>Business Hours</h3>
-            <p>Monday &ndash; Friday: 9:00 AM &ndash; 5:00 PM<br>Saturday &amp; Sunday: Closed</p>
+            <p>Monday &ndash; Friday: 9:00 AM &ndash; 5:00 PM &nbsp;&middot;&nbsp; Saturday &amp; Sunday: Closed</p>
           </div>
         </div>
       </div>
@@ -139,11 +139,8 @@
       <p>Distances and travel times are approximate, measured from our office.</p>
     </div>
     <div class="map-amenities-wrap">
-      <div class="map-block">
-        <div class="map-pin">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-7.58-7-12a7 7 0 0 1 14 0c0 4.42-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Suite 1A, Level 1, 40 Raymond Street, Bankstown NSW 2200, Australia
-        </div>
+      <div class="map-block" style="padding:0;">
+        <iframe src="https://www.google.com/maps?q=1A+Level+1+40+Raymond+Street+Bankstown+NSW+2200&amp;output=embed" style="border:0;width:100%;height:100%;min-height:260px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Presto Homes office — 1A, Level 1, 40 Raymond Street, Bankstown NSW 2200"></iframe>
       </div>
       <div class="amenities-list">
         <div class="amenity-row"><span class="name">Bankstown Railway Station</span><span class="time">5 min walk</span></div>
@@ -156,11 +153,12 @@
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section section--tight section--alt">
   <div class="container">
     <div class="section-head">
       <h2>Stay Tuned</h2>
-      <p>Stay tuned for announcements about our upcoming Open House.</p>
+      <p>Keep following us on social media and our website for announcements about our upcoming Featured Project.</p>
+      <a href="contact.html" class="btn btn--burgundy mt-24">Open House Day &amp; Time</a>
     </div>
   </div>
 </section>
@@ -203,7 +201,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="contact.html" class="footer-contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.58-7-12a7 7 0 0 1 14 0c0 4.42-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>Suite 1A, Level 1, 40 Raymond Street, Bankstown NSW 2200, Australia</a></li>
+          <li><a href="contact.html" class="footer-contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.58-7-12a7 7 0 0 1 14 0c0 4.42-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>1A, Level 1, 40 Raymond Street, Bankstown NSW 2200</a></li>
           <li><a href="tel:+61297900050" class="footer-contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>+61 2 9790 0050</a></li>
           <li><a href="https://prestohomes.net.au" target="_blank" rel="noopener" class="footer-contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>prestohomes.net.au</a></li>
           <li><a href="mailto:hello@prestohomes.com.au" class="footer-contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>hello@prestohomes.com.au</a></li>
